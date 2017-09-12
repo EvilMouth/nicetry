@@ -150,6 +150,8 @@ module.exports = class extends Generator {
       mkdirp(split[i]);
       this.destinationRoot(this.destinationPath(split[i]));
     }
+    mkdirp(this.props.projectName);
+    this.destinationRoot(this.props.projectName);
 
     let mainActivityTpl = _.template(this.fs.read(this.templatePath('app/src/main/java/MainActivity')));
     this.fs.write(this.destinationPath('MainActivity.java'), mainActivityTpl({
