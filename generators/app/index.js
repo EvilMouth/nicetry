@@ -93,8 +93,7 @@ module.exports = class extends Generator {
     let appBuildTpl = _.template(this.fs.read(this.templatePath('app/build.gradle')));
     this.fs.write(this.destinationPath('build.gradle'), appBuildTpl({
       projectName: this.props.projectName,
-      companyDomain: fuckCompanyDomain(this.props.companyDomain),
-      minSdk: this.props.minSdk
+      companyDomain: fuckCompanyDomain(this.props.companyDomain)
     }));
 
     this.fs.copy(
